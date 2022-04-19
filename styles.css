@@ -21,24 +21,27 @@
   padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 body {
   font-family: "Bookerly";
 }
 
-.main {
-  display: grid;
-  /* grid-template-columns: ; */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.header {
-  animation: fadeInLeft;
-  animation-duration: 1s;
-  color: rgb(9, 31, 8);
-  font-size: 50px;
-  padding-left: 15px;
-  text-decoration: underline;
+
+.header-title {
+  font-size: 45px;
+  padding-right: 10px;
+}
+
+svg:hover {
+  color: red;
+  cursor: pointer;
 }
 
 .page-contain {
@@ -46,10 +49,15 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.page-contain * {
+/* animations  animations  animations  animations  animations  animations */
+/* .header {
   animation: fadeInLeft;
   animation-duration: 1s;
 }
+.page-contain * {
+  animation: pulse;
+  animation-duration: 1s;
+} */
 
 /* CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD */
 
@@ -202,4 +210,3 @@ body {
     transform: translateX(0.125em);
   }
 }
-/* CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD */
