@@ -26,6 +26,15 @@ body {
   font-family: "Bookerly";
 }
 
+hr {
+  height: 3px;
+  width: 85%;
+  margin: 0 auto;
+  background-color: black;
+  animation: fadeInDown;
+  animation-duration: 3s;
+}
+
 .header-container {
   display: flex;
   align-items: center;
@@ -42,20 +51,20 @@ body {
   cursor: pointer;
 }
 
-.page-contain {
+.card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 /* animations  animations  animations  animations  animations  animations */
-/* .header {
+.header {
   animation: fadeInLeft;
   animation-duration: 1s;
 }
 .page-contain * {
   animation: pulse;
   animation-duration: 1s;
-} */
+}
 
 /* CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD */
 
@@ -65,7 +74,7 @@ body {
   box-sizing: border-box;
 }
 
-.data-card {
+.card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -90,7 +99,7 @@ body {
     -webkit-transform 0.45s ease;
 }
 
-.data-card .card-title {
+.card .card-title {
   color: #2e3c40;
   font-size: 3.5em;
   font-weight: 600;
@@ -102,7 +111,7 @@ body {
   transition: color 0.45s ease, border 0.45s ease;
 }
 
-.data-card .card-author {
+.card .card-author {
   color: #627084;
   text-transform: uppercase;
   font-size: 1.125em;
@@ -114,7 +123,7 @@ body {
   transition: color 0.45s ease;
 }
 
-.data-card p {
+/* .card p {
   opacity: 0;
   color: #ffffff;
   font-weight: 600;
@@ -127,9 +136,9 @@ body {
   transition: opacity 0.45s ease, transform 0.5s ease;
   transition: opacity 0.45s ease, transform 0.5s ease,
     -webkit-transform 0.5s ease;
-}
+} */
 
-.data-card .read-status {
+.card .read-status {
   display: block;
   color: #753bbd;
   font-size: 1.125em;
@@ -140,7 +149,7 @@ body {
   transition: color 0.45s ease;
 }
 
-.data-card .read-status svg {
+.card .read-status svg {
   margin-left: 9.7em;
   -webkit-transition: -webkit-transform 0.6s ease;
   transition: -webkit-transform 0.6s ease;
@@ -148,43 +157,55 @@ body {
   transition: transform 0.6s ease, -webkit-transform 0.6s ease;
 }
 
-.data-card .read-status svg path {
+.card .read-status svg path {
   -webkit-transition: fill 0.45s ease;
   transition: fill 0.45s ease;
 }
 
-.data-card:hover {
+.card:hover {
   background: #753bbd;
   -webkit-transform: scale(1.02);
   transform: scale(1.02);
 }
 
-.data-card:hover .card-title {
+.card:hover .card-title {
   color: #ffffff;
   border-bottom-color: #a754c4;
 }
 
-.data-card:hover .card-author {
+.card:hover .card-author {
   color: #ffffff;
 }
 
-.data-card:hover p {
+.card:hover p {
   opacity: 1;
   -webkit-transform: none;
   transform: none;
 }
 
-.data-card:hover .read-status {
+.card:hover .read-status {
   color: #ffffff;
 }
 
-.data-card:hover .read-status svg {
+.card:hover .read-status svg {
   -webkit-animation: point 1.25s infinite alternate;
   animation: point 1.25s infinite alternate;
 }
 
-.data-card:hover .read-status svg path {
+.card:hover .read-status svg path {
   fill: #ffffff;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
 @-webkit-keyframes point {
