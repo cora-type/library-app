@@ -177,11 +177,11 @@ hr {
   color: #ffffff;
 }
 
-.card:hover p {
+/* .card:hover p {
   opacity: 1;
   -webkit-transform: none;
   transform: none;
-}
+} */
 
 .card:hover .read-status {
   color: #ffffff;
@@ -192,9 +192,9 @@ hr {
   animation: point 1.25s infinite alternate;
 }
 
-.card:hover .read-status svg path {
+/* .card:hover .read-status svg path {
   fill: #ffffff;
-}
+} */
 
 button,
 input[type="submit"],

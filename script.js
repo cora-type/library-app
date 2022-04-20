@@ -19,12 +19,9 @@ let example2 = new Book("1984", "George Orwell", "455", "false");
 let example3 = new Book("Yeet", "Madeline Miller", "393", "false");
 
 let myLibrary = [example, example2, example3];
-// result is the Object, id is the number
 
+// result is the Object, id is the number
 myLibrary.forEach((result) => {
-  // create card element
-  const theCard = document.createElement("div");
-  theCard.classList.add("card");
   // Construct card content
   const content = `
   <div class="card">
@@ -55,3 +52,5 @@ myLibrary.forEach((result) => {
   // Append newyly created card element to the container
   cardContainer.innerHTML += content;
 });
+
+// addBookBtn.onclick = openAddBookModal;
