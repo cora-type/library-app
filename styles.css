@@ -3,13 +3,11 @@
   src: url(fonts/Bookerly.ttf) format("truetype");
   font-weight: normal;
 }
-
 @font-face {
   font-family: "Bookerly";
   src: url(fonts/Bookerly\ Bold.ttf) format("truetype");
   font-weight: bold;
 }
-
 @font-face {
   font-family: "Bookerly";
   src: url(fonts/Bookerly\ Italic.ttf) format("truetype");
@@ -39,7 +37,7 @@ body {
   padding-right: 10px;
 }
 
-svg:hover {
+.header-title svg:hover {
   color: red;
   cursor: pointer;
 }
@@ -92,7 +90,7 @@ svg:hover {
     -webkit-transform 0.45s ease;
 }
 
-.data-card h3 {
+.data-card .card-title {
   color: #2e3c40;
   font-size: 3.5em;
   font-weight: 600;
@@ -104,7 +102,7 @@ svg:hover {
   transition: color 0.45s ease, border 0.45s ease;
 }
 
-.data-card h4 {
+.data-card .card-author {
   color: #627084;
   text-transform: uppercase;
   font-size: 1.125em;
@@ -131,7 +129,7 @@ svg:hover {
     -webkit-transform 0.5s ease;
 }
 
-.data-card .link-text {
+.data-card .read-status {
   display: block;
   color: #753bbd;
   font-size: 1.125em;
@@ -142,15 +140,15 @@ svg:hover {
   transition: color 0.45s ease;
 }
 
-.data-card .link-text svg {
-  margin-left: 0.5em;
+.data-card .read-status svg {
+  margin-left: 9.7em;
   -webkit-transition: -webkit-transform 0.6s ease;
   transition: -webkit-transform 0.6s ease;
   transition: transform 0.6s ease;
   transition: transform 0.6s ease, -webkit-transform 0.6s ease;
 }
 
-.data-card .link-text svg path {
+.data-card .read-status svg path {
   -webkit-transition: fill 0.45s ease;
   transition: fill 0.45s ease;
 }
@@ -161,12 +159,12 @@ svg:hover {
   transform: scale(1.02);
 }
 
-.data-card:hover h3 {
+.data-card:hover .card-title {
   color: #ffffff;
   border-bottom-color: #a754c4;
 }
 
-.data-card:hover h4 {
+.data-card:hover .card-author {
   color: #ffffff;
 }
 
@@ -176,16 +174,16 @@ svg:hover {
   transform: none;
 }
 
-.data-card:hover .link-text {
+.data-card:hover .read-status {
   color: #ffffff;
 }
 
-.data-card:hover .link-text svg {
+.data-card:hover .read-status svg {
   -webkit-animation: point 1.25s infinite alternate;
   animation: point 1.25s infinite alternate;
 }
 
-.data-card:hover .link-text svg path {
+.data-card:hover .read-status svg path {
   fill: #ffffff;
 }
 
