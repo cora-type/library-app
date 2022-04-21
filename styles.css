@@ -26,6 +26,10 @@ body {
   font-family: "Bookerly";
 }
 
+.main {
+  transition: 0.5s ease;
+}
+
 hr {
   height: 3px;
   width: 85%;
@@ -52,8 +56,9 @@ hr {
 }
 
 .card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 /* animations  animations  animations  animations  animations  animations */
@@ -64,6 +69,86 @@ hr {
 .page-contain * {
   animation: pulse;
   animation-duration: 1s;
+}
+
+/* form modal  form modal  form modal  form modal  form modal  form modal  form modal  form modal  form modal  form modal  */
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 500ms;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.modal-container.show {
+  visibility: visible;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.form {
+  width: 340px;
+  height: 440px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid black;
+  margin: calc(50vh - 220px) auto;
+  padding: 20px 30px;
+  max-width: calc(100vw - 40px);
+  box-sizing: border-box;
+  position: relative;
+}
+h2 {
+  margin: 10px 0;
+  padding-bottom: 10px;
+  width: 180px;
+  color: #78788c;
+  border-bottom: 3px solid #78788c;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: none;
+  outline: none;
+  resize: none;
+  border: 0;
+  font-family: "Montserrat", sans-serif;
+  transition: all 0.3s;
+  border-bottom: 2px solid #bebed2;
+}
+input:focus {
+  border-bottom: 2px solid #78788c;
+}
+p:before {
+  content: attr(type);
+  display: block;
+  margin: 28px 0 0;
+  font-size: 14px;
+  color: #5a5a5a;
+}
+#close {
+  float: right;
+  padding: 8px 12px;
+  margin: 8px 0 0;
+  font-family: "Montserrat", sans-serif;
+  border: 2px solid #78788c;
+  background: 0;
+  color: #5a5a6e;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#close:hover {
+  background: #78788c;
+  color: #fff;
 }
 
 /* CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD  CARD */
@@ -123,7 +208,7 @@ hr {
   transition: color 0.45s ease;
 }
 
-/* .card p {
+.card .description {
   opacity: 0;
   color: #ffffff;
   font-weight: 600;
@@ -136,7 +221,7 @@ hr {
   transition: opacity 0.45s ease, transform 0.5s ease;
   transition: opacity 0.45s ease, transform 0.5s ease,
     -webkit-transform 0.5s ease;
-} */
+}
 
 .card .read-status {
   display: block;
@@ -177,11 +262,11 @@ hr {
   color: #ffffff;
 }
 
-/* .card:hover p {
+.card:hover .description {
   opacity: 1;
   -webkit-transform: none;
   transform: none;
-} */
+}
 
 .card:hover .read-status {
   color: #ffffff;

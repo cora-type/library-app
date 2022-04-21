@@ -13,41 +13,62 @@
     <title>lograry</title>
   </head>
   <body>
-    <div class="header-container">
-      <div class="header-title">Library</div>
-      <button
-        class="btn btn-add animate__animated animate__swing animate__delay-2s"
-        id="addBookBtn"
-      >
-        + Add book
-      </button>
-    </div>
-    <hr />
-    <div class="card-container">
-      <div class="card">
-        <div class="card-title">The Great Gatsby</div>
-        <div class="card-author">F. Scott Fitzgerald</div>
-        <!-- p is the text that fades in  -->
-        <!-- <p>Etiam porta sem malesuada.</p> -->
-        <div class="read-status">
-          <button id="read-button">
-            Read<svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-check-circle"
-            >
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-              <polyline points="22 4 12 14.01 9 11.01"></polyline>
-            </svg>
+    <div class="main">
+      <div class="header-container">
+        <div class="header-title">Library</div>
+        <button
+          class="btn btn-add animate__animated animate__swing animate__delay-2s"
+          id="addBookBtn"
+        >
+          + Add book
+        </button>
+      </div>
+      <hr />
+      <div class="card-container">
+        <div class="card">
+          <button id="delete">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
           </button>
+          <div class="card-title">The Great Gatsby</div>
+          <div class="card-author">F. Scott Fitzgerald</div>
+          <!-- p is the text that fades in  -->
+          <div class="description">My fav</div>
+          <div class="read-status">
+            <button id="read-button">
+              read<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-check-circle"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </button>
+          </div>
         </div>
+      </div>
+    </div>
+    <div class="modal-container" id="modal_container">
+      <div class="modal">
+        <form class="form">
+          <h2>add a book</h2>
+          <p><input id="title" type="text" placeholder="title"></input></p>
+          <p><input id="author" type="text"  placeholder="author"></input></p>
+          <p><input id="description" type="text"  placeholder="description"></input></p>
+          <br>
+          <select id="readStatus">
+            <option value="unread">unread</option>
+            <option value="read">read</option>
+          </select>
+          <button id="submit">+ Add to library</button>
+        </form>
       </div>
     </div>
   </body>
