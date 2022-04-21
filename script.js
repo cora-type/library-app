@@ -1,35 +1,34 @@
 let cardContainer = document.querySelector(".card-container");
+let myLibrary = [];
 
 function addBookToLibrary(x) {
   myLibrary.push(x);
 }
 
-function Book(title, author, pages, read) {
+function Book(title, author, description, read) {
   this.title = title;
   this.author = author;
-  this.pages = pages;
+  this.description = description;
   this.read = read;
   // this.info = function () {
   //   return title + " by " + author + ", " + pages + " pages," + read;
   // };
 }
 
-let example = new Book("Circe", "Madeline Miller", "393", "false");
-let example2 = new Book("1984", "George Orwell", "455", "false");
-let example3 = new Book("Yeet", "Madeline Miller", "393", "false");
-
-let myLibrary = [example, example2, example3];
-
-// result is the Object, id is the number
+// insertObject is the Object, id is the number
 myLibrary.forEach((result) => {
-  // Construct card content
-  const content = `
+  run(result);
+});
+
+let run = (insertObject) => {
+  let content = `
   <div class="card">
-    <div class="card-title">${result.title}</div>
-    <div class="card-author">${result.author}</div>
+    <div class="card-title">${insertObject.title}</div>
+    <div class="card-author">${insertObject.author}</div>
+              <div class="description">${insertObject.description}</div>
     <div class="read-status">
       <button id="read-button">
-        ${result.read}<svg
+        ${insertObject.read}<svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -49,8 +48,46 @@ myLibrary.forEach((result) => {
         </div>
   `;
 
-  // Append newyly created card element to the container
   cardContainer.innerHTML += content;
+};
+
+//buttons
+const addBookBtn = document.getElementById("addBookBtn");
+const submit = document.getElementById("submit");
+const deleteButton = document.getElementById("delete");
+
+//containers
+const modal_container = document.getElementById("modal_container");
+const body = document.querySelector(".main");
+
+//form elements
+
+const form = document.querySelector(".form");
+const title_input = document.querySelector("#title");
+const author_input = document.querySelector("#author");
+const read_input = document.querySelector("#readStatus");
+const description_input = document.querySelector("#description");
+
+addBookBtn.addEventListener("click", () => {
+  modal_container.classList.add("show");
+  body.style.cssText = "filter: blur(3px);";
 });
 
-// addBookBtn.onclick = openAddBookModal;
+deleteButton.addEventListener("click", () => {});
+
+submit.addEventListener("click", (event) => {
+  event.preventDefault();
+  modal_container.classList.remove("show");
+  body.style.cssText = "";
+  let yeet = new Book(
+    `${title_input.value}`,
+    `${author_input.value}`,
+    `${description_input.value}`,
+    `${read_input.value}`
+  );
+  addBookToLibrary(yeet);
+  run(yeet);
+  console.log(myLibrary);
+
+  form.reset();
+});
