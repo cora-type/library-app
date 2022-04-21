@@ -182,6 +182,8 @@ p:before {
   transition: transform 0.45s ease, background 0.45s ease;
   transition: transform 0.45s ease, background 0.45s ease,
     -webkit-transform 0.45s ease;
+  animation: fadeIn;
+  animation-duration: 2s;
 }
 
 .card .card-title {

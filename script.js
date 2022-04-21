@@ -1,5 +1,6 @@
 let cardContainer = document.querySelector(".card-container");
-let myLibrary = [];
+let a = new Book("1984", "George Orwell", "Dystopian O.o", "read");
+let myLibrary = [a];
 
 function addBookToLibrary(x) {
   myLibrary.push(x);
@@ -15,20 +16,22 @@ function Book(title, author, description, read) {
   // };
 }
 
-// insertObject is the Object, id is the number
-myLibrary.forEach((result) => {
-  run(result);
-});
+const parent = document.querySelectorAll(".card");
 
-let run = (insertObject) => {
-  let content = `
-  <div class="card">
-    <div class="card-title">${insertObject.title}</div>
-    <div class="card-author">${insertObject.author}</div>
-              <div class="description">${insertObject.description}</div>
+// result is the Object, id is the number
+let run = () =>
+  myLibrary.forEach((result, idx) => {
+    var myEle = document.getElementById(idx);
+    // If a card with the current object doesnt exist, make it, else do nothing as to avoid duplicates.
+    if (!myEle) {
+      let content = `
+  <div class="card" id="${idx}">
+    <div class="card-title">${result.title}</div>
+    <div class="card-author">${result.author}</div>
+              <div class="description">${result.description}</div>
     <div class="read-status">
       <button id="read-button">
-        ${insertObject.read}<svg
+        ${result.read}<svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -48,8 +51,9 @@ let run = (insertObject) => {
         </div>
   `;
 
-  cardContainer.innerHTML += content;
-};
+      cardContainer.innerHTML += content;
+    }
+  });
 
 //buttons
 const addBookBtn = document.getElementById("addBookBtn");
@@ -73,7 +77,7 @@ addBookBtn.addEventListener("click", () => {
   body.style.cssText = "filter: blur(3px);";
 });
 
-deleteButton.addEventListener("click", () => {});
+// deleteButton.addEventListener("click", () => {});
 
 submit.addEventListener("click", (event) => {
   event.preventDefault();
@@ -86,8 +90,10 @@ submit.addEventListener("click", (event) => {
     `${read_input.value}`
   );
   addBookToLibrary(yeet);
-  run(yeet);
-  console.log(myLibrary);
-
+  run();
   form.reset();
+});
+
+window.addEventListener("load", (event) => {
+  run();
 });
