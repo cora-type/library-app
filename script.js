@@ -13,6 +13,7 @@ function Book(title, author, description, read) {
   this.read = read;
 }
 
+// adds cards to display, need to redo this function, too complicated and unscalable.
 // result is the Object, id is the number
 let run = () =>
   myLibrary.forEach((result, idx) => {
@@ -37,6 +38,7 @@ let run = () =>
     }
   });
 
+//redisplays all the mylibrary cards, need to redo this function and use DOM manipulation instead of literally adding HTML for security risks/cleaner code.
 let run2 = () =>
   myLibrary.forEach((result, idx) => {
     let content = `
