@@ -71,6 +71,10 @@ hr {
   animation-duration: 1s;
 }
 
+.delete-button {
+  color: white;
+}
+
 /* form modal  form modal  form modal  form modal  form modal  form modal  form modal  form modal  form modal  form modal  */
 
 .modal-container {
@@ -110,8 +114,8 @@ h2 {
   margin: 10px 0;
   padding-bottom: 10px;
   width: 180px;
-  color: #78788c;
-  border-bottom: 3px solid #78788c;
+  color: #000000;
+  border-bottom: 3px solid #a754c4;
 }
 input {
   width: 100%;
@@ -228,7 +232,7 @@ p:before {
 .card .read-status {
   display: block;
   color: #753bbd;
-  font-size: 1.125em;
+  font-size: 1em;
   font-weight: 600;
   line-height: 1.2;
   margin: auto 0 0;
